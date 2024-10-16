@@ -8,9 +8,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme();
-        meuFilme.setNome("O Poderoso Chefão");
-        meuFilme.setAnoDeLancamento(1970);
+        Filme meuFilme = new Filme("O poderoso chefão",1970);
         meuFilme.setDuracaoEmMinutos(180);
 
         meuFilme.exibirFichaTecnica();
@@ -22,16 +20,12 @@ public class Main {
         System.out.println("Total de avaliações: " + meuFilme.getTotalDeAvaliacoes());
         System.out.println(meuFilme.pegaMedia());
 
-        Serie lost = new Serie();
-        lost.setNome("lost final ruim");
-        lost.setAnoDeLancamento(2009);
+        Serie lost = new Serie("lost final ruim", 2009);
         lost.exibirFichaTecnica();
         lost.setTemporadas(10);
         lost.setEpisodiosPorTemṕrada(24);
         System.out.println("duração da maratonar a merda que eh lost: " + lost.getDuracaoEmMinutos());
-        Filme filme2 = new Filme();
-        filme2.setNome("avatar");
-        filme2.setAnoDeLancamento(2023);
+        Filme filme2 = new Filme("Avatar", 2023);
         filme2.setDuracaoEmMinutos(200);
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
         calculadora.inclui(meuFilme);
@@ -48,10 +42,9 @@ public class Main {
         episodio.setTotalVisualizacoes(300);
         filtro.filtrar(episodio);
 
-        var filmeDoPaulo = new Filme();
-        filmeDoPaulo.setNome("Daredevil");
+        var filmeDoPaulo = new Filme("Daredevil", 2003);
+//        filmeDoPaulo.setNome("Daredevil");
         filmeDoPaulo.setDuracaoEmMinutos(200);
-        filmeDoPaulo.setAnoDeLancamento(2003);
         filmeDoPaulo.avalia(10);
 
         ArrayList<Filme> listaDeFilmes = new ArrayList<>();
@@ -59,7 +52,7 @@ public class Main {
         listaDeFilmes.add(meuFilme);
         listaDeFilmes.add(filme2);
         System.out.println("tamanho da lista é: " + listaDeFilmes.size());
-        System.out.println("O primeiro filme da lista é: " + listaDeFilmes.get(0).getNome());
+        System.out.println("O primeiro filme da lista é: " + listaDeFilmes.get(0).toString());
         System.out.println(listaDeFilmes);
 
     }
